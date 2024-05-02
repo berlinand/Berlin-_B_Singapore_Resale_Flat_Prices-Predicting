@@ -12,15 +12,20 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import r2_score
 import math
 from sklearn.model_selection import train_test_split
-
+import os
 #This funtion read data and convert into dataframe 
 @st.cache_data
 def readdata():
-   df1= pd.read_csv(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleFlatPricesBasedonApprovalDate19901999.csv")
-   df2=pd.read_csv(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleFlatPricesBasedonApprovalDate2000Feb2012.csv")
-   df3=pd.read_csv(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleFlatPricesBasedonRegistrationDateFromMar2012toDec2014.csv")
-   df4=pd.read_csv(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleFlatPricesBasedonRegistrationDateFromJan2015toDec2016.csv")
-   df5=pd.read_csv(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleflatpricesbasedonregistrationdatefromJan2017onwards.csv")  
+   dir1=os.path(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleFlatPricesBasedonApprovalDate19901999.csv")
+   dr2=os.path(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleFlatPricesBasedonApprovalDate2000Feb2012.csv")
+   dr3=os.path(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleFlatPricesBasedonRegistrationDateFromMar2012toDec2014.csv")
+   dr4=os.path(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleFlatPricesBasedonRegistrationDateFromJan2015toDec2016.csv")
+   dr5=os.path(r"D:\material\projects\MDE86\project_6_flat_resale\ResaleflatpricesbasedonregistrationdatefromJan2017onwards.csv")  
+   df1= pd.read_csv(dir1)
+   df2=pd.read_csv(dir2)
+   df3=pd.read_csv(dir3)
+   df4=pd.read_csv(dr4)
+   df5=pd.read_csv(dr5)  
    df6=pd.concat([df1,df2,df3,df4,df5])
    df6= df6.sample(n=50000)
    return df6 

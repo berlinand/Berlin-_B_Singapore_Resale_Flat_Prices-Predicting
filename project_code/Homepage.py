@@ -116,8 +116,8 @@ def mmodels(df,lo,models,test_si,modelrun):
    st.write(F":violet[Test r2 score]-{r2_score(y_test,test_pred)} ")
    
    r2=r2_score(y_test,test_pred)
-  
-   st.write(f':blue[selling price]= {''.join(test_pred_1.astype(str))}')
+   tx=''.join(test_pred_1.astype(str))
+   st.write(f':blue[selling price]= {tx}')
    st.write("-----------------------------------------------------")   
 try:
   df=readdata()
